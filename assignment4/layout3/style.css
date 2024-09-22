@@ -1,0 +1,85 @@
+body {
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    width: 960px;
+}
+
+.item {
+    background: #c0c0c0;
+    height: 150px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "logo empt1 navi navi"
+        "headerDiv headerDiv headerDiv headerDiv"
+        "title1 empt2 title2 empt3"
+        "blog1 blog1 feat1 feat2"
+        "blog2 blog2 feat3 feat4"
+        "notice notice notice notice";
+    gap: 20px;
+}
+.logo {
+    grid-area: logo;
+    height: 80px;
+}
+.empty1 {
+    grid-area: empty1;
+}
+.navi {
+    grid-area: navi;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0 auto 0;
+}
+.header-div {
+    grid-area: headerDiv;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5% 0 5%;
+}
+.title1 {
+    grid-area: title1;
+    height: 40px;
+}
+.empty2 {
+    grid-area: empty1;
+}
+.title2 {
+    grid-area: title2;
+    height: 40px;
+}
+.empty2 {
+    grid-area: empty2;
+}
+.blog1 {
+    grid-area: blog1;
+}
+.feat1 {
+    grid-area: feat1;
+}
+.feat2 {
+    grid-area: feat2;
+}
+.blog2 {
+    grid-area: blog2;
+}
+.feat3 {
+    grid-area: feat3;
+}
+.feat4 {
+    grid-area: feat4;
+}
+.notice {
+    grid-area: notice;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

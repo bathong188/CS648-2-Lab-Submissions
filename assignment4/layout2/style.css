@@ -1,0 +1,78 @@
+body {
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    width: 960px;
+}
+
+.item {
+    background: #c0c0c0;
+    height: 150px;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-areas:
+        "logo navi";
+    gap: 10px;
+}
+.logo {
+    grid-area: logo;
+    width: 50%;
+    height: 80px;
+}
+.navi {
+    grid-area: navi;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0 auto 0;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-areas:
+        "feat feat feat"
+        "prd1 prd2 prd3"
+        "prd4 prd5 prd6"
+        "prd7 prd8 prd9"
+        "notice notice notice";
+    gap: 10px;
+}
+.featured-product {
+    grid-area: feat;
+}
+.product1 {
+    grid-area: prd1;
+}
+.product2 {
+    grid-area: prd2;
+}
+.product3 {
+    grid-area: prd3;
+}
+.product4 {
+    grid-area: prd4;
+}
+.product5 {
+    grid-area: prd5;
+}
+.product6 {
+    grid-area: prd6;
+}
+.product7 {
+    grid-area: prd7;
+}
+.product8 {
+    grid-area: prd8;
+}
+.product9 {
+    grid-area: prd9;
+}
+.notice {
+    grid-area: notice;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
