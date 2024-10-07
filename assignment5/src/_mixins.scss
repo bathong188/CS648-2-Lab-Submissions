@@ -1,0 +1,48 @@
+@mixin box(
+    $width: auto,
+    $height: auto,
+    $margin: 0,
+    $padding: 0,
+    $background: none
+) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    padding: $padding;
+    background: $background;
+}
+
+@mixin font-style(
+    $font-family: $font-stack,
+    $font-size: 1em,
+    $line-height: 1.5em,
+    $font-weight: normal,
+    $color: $secondary-color
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+@mixin link-style($color: $primary-color, $text-decoration: none) {
+    color: $color;
+    text-decoration: $text-decoration;
+}
+
+@mixin break($point) {
+    @if $point == tablet {
+        @media screen and (max-width: 959px) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == small-mobile {
+        @media screen and (max-width: 459px) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,308 @@
+@import "variables";
+@import "mixins";
+@import "navigation";
+
+// BASIC STYLES
+body {
+    @include font-style($font-size: 1em, $line-height: 2em);
+    background: url($bg-image) $white-color repeat-x;
+    margin: 0;
+}
+
+main {
+    @include box($width: 940px, $margin: 0 auto, $padding: 0 10px);
+}
+
+// HEADER
+header {
+    width: inherit;
+    clear: both;
+    text-align: center;
+    padding-top: 40px;
+    color: black;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        color: $primary-color;
+        font-weight: 100;
+        font-size: 4em;
+        line-height: 0;
+    }
+
+    h2 {
+        color: $white-color;
+        font-weight: 900;
+        font-size: 2.5em;
+        line-height: 0;
+        margin-bottom: 70px;
+    }
+
+    h3 {
+        color: $secondary-color;
+        font-weight: 400;
+        font-size: 2em;
+        line-height: 0;
+        margin-bottom: 50px;
+    }
+}
+
+// CONTENT
+#headline {
+    @include box(
+        $width: 100%,
+        $height: 130px,
+        $background: $headline-bg-color,
+        $margin: 0 auto
+    );
+    text-align: center;
+
+    h1 {
+        color: $white-color;
+        font-size: 2.5em;
+        font-weight: 100;
+        padding-top: 50px;
+    }
+}
+
+#content {
+    @include box($width: 940px, $margin: 20px auto);
+    color: black;
+
+    h3 {
+        color: $secondary-color;
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    #products {
+        width: 460px;
+        float: left;
+
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        article {
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            line-height: 1em;
+        }
+    }
+
+    #testimonials {
+        width: 460px;
+        float: right;
+    }
+}
+
+// FOOTER
+.greybar {
+    @include box(
+        $width: 100%,
+        $height: 90px,
+        $background: $greybar-bg-color,
+        $padding: 30px 0 0 0
+    );
+    clear: both;
+}
+
+footer {
+    @include box(
+        $width: 100%,
+        $height: 120px,
+        $background: $footer-bg-color,
+        $padding: 50px 0 0 0
+    );
+    text-align: center;
+    color: $white-color;
+
+    .social-media {
+        margin: 0 auto;
+        width: 165px;
+
+        div {
+            float: left;
+            margin-right: 5px;
+
+            a {
+                display: block;
+                width: 36px;
+                height: 36px;
+                text-indent: -9999px;
+            }
+
+            &.one {
+                background: url($social-media-image) 0 0;
+            }
+
+            &.two {
+                background: url($social-media-image) -$social-icon-x-offset * 1 0;
+            }
+
+            &.three {
+                background: url($social-media-image) -$social-icon-x-offset * 2 0;
+            }
+
+            &.four {
+                background: url($social-media-image) -$social-icon-x-offset * 3 0;
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+@include break(tablet) {
+    main {
+        width: 768px;
+    }
+
+    figure {
+        width: inherit;
+        height: 140px;
+        float: none;
+        background-position: center;
+    }
+
+    nav {
+        width: inherit;
+        height: 50px;
+        float: none;
+        text-align: center;
+
+        ul {
+            margin-top: 0;
+
+            li {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+        }
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    header h2 {
+        font-size: 1.5em;
+    }
+
+    #content {
+        width: inherit;
+
+        #products,
+        #testimonials {
+            width: 46%;
+            margin: 0 2%;
+        }
+    }
+}
+
+@include break(mobile) {
+    main {
+        width: 460px;
+    }
+
+    nav ul li {
+        font-size: 0.8em;
+        margin: 0 5px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1em;
+    }
+
+    header img {
+        margin-bottom: 100px;
+    }
+
+    header h3 {
+        font-size: 1.5em;
+    }
+
+    #headline h1 {
+        font-size: 2em;
+        padding-top: 50px;
+    }
+
+    #content {
+        #products,
+        #testimonials {
+            width: 96%;
+            margin: 0 2%;
+            float: none;
+        }
+    }
+}
+
+@include break(small-mobile) {
+    main {
+        width: 300px;
+    }
+
+    figure {
+        background-size: contain;
+        height: 100px;
+    }
+
+    nav {
+        margin-bottom: 40px !important;
+    }
+
+    select {
+        width: 95%;
+    }
+
+    #headline h1 {
+        font-size: 1.5em;
+        padding-top: 30px;
+    }
+
+    header img {
+        margin-bottom: 80px;
+    }
+
+    header h1:first-child {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    header h2 {
+        font-size: 1.4em;
+    }
+
+    header h3 {
+        color: $white-color;
+        font-size: 1em;
+    }
+
+    #content h3 {
+        font-size: 1.6em;
+    }
+
+    .greybar,
+    article img {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+
+        p,
+        img {
+            float: none;
+            margin: 0;
+        }
+    }
+}
