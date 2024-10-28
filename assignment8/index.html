@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 08</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script defer src="js/employee-management.js"></script>
+</head>
+<body class="container my-4">
+    <h3 class="my-4">The Employee Management Application</h3>
+
+    <div class="mb-4" style="max-width: 400px;">
+        <h6>Add Employee</h6>
+        <form id="employeeForm" class="form-inline">
+            <div class="form-group d-flex align-items-center mb-2 ">
+                <label for="name" class="mr-2" style="width: 120px;">Name:</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group d-flex align-items-center mb-2">
+                <label for="title" class="mr-2" style="width: 120px;">Title:</label>
+                <input type="text" id="title" class="form-control" required>
+            </div>
+            <div class="form-group d-flex align-items-center mb-2">
+                <label for="extension" class="mr-2" style="width: 120px;">Extension:</label>
+                <input type="text" id="extension" class="form-control" maxlength="4" required>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" onclick="addEmployee()" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <h6 id="employeeCount" class="mt-4">Showing 0 Employees</h6>
+    <div class="table-container">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Extension</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
