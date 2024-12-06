@@ -4,6 +4,8 @@ import Filters from "./Filters.js";
 import ProductTable from "./ProductTable.js";
 import ProductForm from "./ProductForm.js";
 
+const baseUrl = "http://localhost:5000";
+
 class Products extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +21,7 @@ class Products extends Component {
     async componentDidMount() {
         try {
             const response = await axios.get(
-                "http://localhost:5000/product/get"
+                `${baseUrl}/product/get`
             );
             const products = {};
             response.data.forEach((p) => {
@@ -51,7 +53,7 @@ class Products extends Component {
                 },
             };
             const response = await axios.post(
-                "http://localhost:5000/product/create",
+                `${baseUrl}/product/create`,
                 entry
             );
             this.setState((prevState) => ({
@@ -68,7 +70,7 @@ class Products extends Component {
     async handleDestroy(productid) {
         try {
             await axios.delete(
-                `http://localhost:5000/product/delete/${productid}`
+                `${baseUrl}/product/delete/${productid}`
             );
             this.setState((prevState) => {
                 const products = { ...prevState.products };
