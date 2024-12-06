@@ -1,31 +1,34 @@
-import React, { Component } from 'react'
-import ProductRow from './ProductRow'
+import React, { Component } from "react";
+import ProductRow from "./ProductRow.js";
 
 class ProductTable extends Component {
     constructor(props) {
-        super(props)
-        this.handleDestroy = this.handleDestroy.bind(this)
+        super(props);
+        this.handleDestroy = this.handleDestroy.bind(this);
     }
 
     handleDestroy(id) {
-        this.props.onDestroy(id)
+        this.props.onDestroy(id);
     }
-    
-    render () {
-        let productsArray = Object.keys(this.props.products).map((pid) => this.props.products[pid])
-        let rows = []
+
+    render() {
+        let productsArray = Object.keys(this.props.products).map(
+            (pid) => this.props.products[pid]
+        );
+        let rows = [];
 
         productsArray.forEach((product) => {
-            if (product.name.indexOf(this.props.filterText) === -1) {
-                return
+            if (product?.name?.indexOf(this.props.filterText) === -1) {
+                return;
             }
-            rows.push (
-                <ProductRow 
-                    product={product} 
-                    key={product.id} 
-                    onDestroy={this.handleDestroy}></ProductRow>
-            )
-        })
+            rows.push(
+                <ProductRow
+                    product={product}
+                    key={product.productid}
+                    onDestroy={this.handleDestroy}
+                ></ProductRow>
+            );
+        });
 
         return (
             <div>
@@ -35,16 +38,15 @@ class ProductTable extends Component {
                             <th>Name</th>
                             <th>Category</th>
                             <th>Price</th>
+                            <th>In Stock</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {rows}
-                    </tbody>
+                    <tbody>{rows}</tbody>
                 </table>
             </div>
-        )
+        );
     }
 }
 
-export default ProductTable
+export default ProductTable;

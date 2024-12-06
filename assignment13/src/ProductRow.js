@@ -7,7 +7,7 @@ class ProductRow extends Component {
     }
 
     destroy() {
-        this.props.onDestroy(this.props.product.id);
+        this.props.onDestroy(this.props.product.productid);
     }
 
     render () {
@@ -16,6 +16,7 @@ class ProductRow extends Component {
                 <td>{this.props.product.name}</td>
                 <td>{this.props.product.category}</td>
                 <td>{this.props.product.price}</td>
+                <td>{this.props.product.instock ? "✅" : "❌"}</td>
                 <td class="text-right"><button onClick={this.destroy} class="btn btn-info">Delete</button></td>
             </tr>
         )
